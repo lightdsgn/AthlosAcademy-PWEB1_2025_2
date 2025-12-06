@@ -34,10 +34,10 @@ O **Athlos Academy** é um site institucional + e-commerce integrado com um sist
 /
 │── css/               # Arquivos de estilo
 │── img/               # Imagens e ícones (prints, logos, assets do sistema)
-│── paginas/           # Páginas internas do sistema
-│── php/               # Scripts PHP (CRUD, conexões, autenticação)
+│── paginas/           # Páginas internas do sistema nas linguagem PHP & HTML+CSS
+│── php/               # Scripts PHP (CRUD, conexões, autenticação e páginas do administrador)
 │── admin/             # Área administrativa
-│── sql/               # Arquivos exportados do banco (dump .sql)
+│── sql/               # Arquivos exportados do banco
 │── index.html         # Página inicial do front-end
 │── README.md          # Documentação do repositório
 │── style.css          # Estilo principal
