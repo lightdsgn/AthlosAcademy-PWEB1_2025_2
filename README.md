@@ -47,15 +47,13 @@ O **Athlos Academy** é um sistema web desenvolvido para auxiliar academias, tre
 
 ## ▶️ Como Executar Localmente
 
-1. Instale **Laragon** ou **XAMPP**.  
+1. Instale o **Laragon**
 2. Copie o projeto para:  
-   - `C:/laragon/www/` (Laragon)  
-   - ou `C:/xampp/htdocs/` (XAMPP)  
-3. Crie um banco de dados no MySQL.  
-4. Importe o arquivo SQL (`sql/dump.sql` ou similar) se houver.  
-5. Configure `config.php` ou a conexão com o banco (se aplicável).  
-6. Inicie Apache e MySQL.  
-7. Acesse no navegador: `http://localhost/NOME_DA_PASTA/`
+   - `C:/laragon/www/` (Laragon)   
+3. Inicie o Laragon e clique em Database
+4. Abra o database e confira se o banco está lá
+5. Após isso, configure o código no Visual Studio Code
+6. Acesse no navegador: `http://localhost/PWEB_ATHLOSACADEMY/index.html`
 
 > Observação: o GitHub Pages só serve sites estáticos. Parte PHP só funciona localmente ou em servidor com suporte PHP.
 
@@ -93,9 +91,9 @@ Uso acadêmico / permissões conforme necessidade. Recomenda-se adicionar **LICE
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Autores
 
-**Lucas Eduardo Dacroce (lightdsgn)**
+**Lucas Eduardo Dacroce** e **Erik Martins Gollo**
 Professor/Orientador: Jackson Meires Canuto
 Instituto Federal de Santa Catarina
 CC: Programação Web I - 2025.2
