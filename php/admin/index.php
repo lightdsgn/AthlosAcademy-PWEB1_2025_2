@@ -28,6 +28,9 @@ $totalProdutos = count($dbProdutos->all());
 
 
 
+$novosUsuariosSemana = [5, 10, 7, 12, 8, 6, 9];
+$treinosPorInstrutor = [20, 35, 15, 25, 18, 22, 30, 27];
+
 
 $alertas = [
     ['mensagem'=>'Produto "Creatina Monohidratada" com estoque baixo','tipo'=>'danger'],

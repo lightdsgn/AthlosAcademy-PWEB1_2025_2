@@ -40,33 +40,42 @@ if (!empty($_POST)) {
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Sora', sans-serif;
-            background: #f90030;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 40px;
-        }
+body {
+    font-family: 'Sora', sans-serif;
+    background: #f90030;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    overflow-x: hidden;
+}
+
+
 
         header {
             width: 100%;
             background: #000;
-            padding: 12px 30px;
+            padding: 22px 50px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: fixed;
             top: 0;
             left: 0;
+            border-bottom: 2px solid #f90030;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             z-index: 100;
         }
 
         .header-logo {
             height: 55px;
-            filter: drop-shadow(0px 4px 8px rgba(255,255,255,0.15));
+            margin-left:20px;
+            transition: transform 0.3s ease-in-out; 
+        }
+           
+        .header-logo:hover {
+            transform: scale(1.05);
         }
 
         .btn-header-voltar {
@@ -127,6 +136,22 @@ if (!empty($_POST)) {
         .btn-login:hover {
             background-color: #ff004d;
             transform: scale(1.05);
+            color: #fff;
+        }
+        .botao-login {
+            background-color: #000;
+            border: 2px solid #f90030;
+            border-radius: 10px;
+            margin-right:20px;
+            padding: 10px 40px;
+            font-family: 'Sora ExtraBold', sans-serif;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .botao-login:hover {
+            background-color: #ff004d;
+            transform: scale(1.05);
         }
 
         .btn-secondary {
@@ -142,8 +167,8 @@ if (!empty($_POST)) {
         }
         .btn-secondary:hover {
             transform: scale(1.05);
-            border-color: #f90030;
-            color: #f90030;
+            border-color: #000000ff;
+
             background: #000;
         }
 
@@ -156,10 +181,23 @@ if (!empty($_POST)) {
 <body>
 
 
+
     <header>
         <img src="../../img/LOGO-ATHLOS2.png" class="header-logo" alt="Athlos Logo">
 
-        <a href="../index.html" class="btn-header-voltar">← Voltar</a>
+                   <button 
+    style="margin-left:30px;width: 160px; padding-left:3px; padding-right:3px" 
+    class="botao-login" 
+    onclick="window.location.href='../../index.html'">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        style="margin-right:10px; margin-top:-3px"
+        fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+    </svg>
+    VOLTAR
+</button>
+
     </header>
 
 
@@ -182,8 +220,8 @@ if (!empty($_POST)) {
                 <input class="form-control" type="password" name="senha" placeholder="Digite sua senha">
             </div>
 
-            <button class="btn btn-login" type="submit">Entrar</button>
-            <a class="btn btn-secondary" href="usuario/UsuarioForm.php">Criar conta</a>
+            <button class="btn btn-login" type="submit">ENTRAR</button>
+            <a class="btn btn-secondary" href="usuario/UsuarioForm.php">CRIAR CONTA</a>
         </form>
     </div>
 

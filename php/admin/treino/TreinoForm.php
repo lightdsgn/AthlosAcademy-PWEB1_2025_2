@@ -83,6 +83,7 @@ if (!empty($_POST)) {
             width:95%;
             max-width:900px;
             margin-top:60px;
+            margin-bottom: 100px;
             padding:35px;
             border-radius:20px;
             box-shadow:0 12px 30px rgba(0,0,0,0.12);

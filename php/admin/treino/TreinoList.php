@@ -69,7 +69,8 @@ if (!empty($busca)) {
             border-radius:20px;
             box-shadow:0 12px 30px rgba(0,0,0,0.12);
             margin-top:60px;
-                    animation: fade .3s ease-out;
+            margin-bottom: 100px;
+            animation: fade .3s ease-out;
         }
 
         @keyframes fade {

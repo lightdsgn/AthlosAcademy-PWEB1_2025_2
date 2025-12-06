@@ -66,6 +66,7 @@ if (!empty($_POST['valor'])) {
 
         .card-lista {
             margin-top: 50px;
+            margin-bottom: 100px;
             background: #fff;
             width: 95%;
             max-width: 1100px;

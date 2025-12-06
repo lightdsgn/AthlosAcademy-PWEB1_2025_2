@@ -123,6 +123,7 @@ if (!empty($_POST)) {
             width: 100%;
             margin-left: 50px;
             margin-top: 60px;
+            margin-bottom: 100px;
             max-width: 1000px;
             border-radius: 20px;
             padding: 35px;

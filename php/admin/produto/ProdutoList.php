@@ -60,12 +60,13 @@ if ($busca) {
 
         .card-lista {
             margin-top: 50px;
+            margin-bottom: 100px;
             background: #fff;
             width: 95%;
             max-width: 1100px;
             padding: 40px;
             border-radius: 20px;
-                    animation: fade .3s ease-out;
+            animation: fade .3s ease-out;
         }
 
         @keyframes fade {

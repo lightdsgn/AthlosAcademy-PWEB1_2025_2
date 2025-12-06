@@ -66,7 +66,7 @@ if (!empty($_POST)) {
 
     <style>
         body { background: #f90030; font-family: 'Sora', sans-serif; min-height: 100vh; padding: 40px 0; display: flex; justify-content: center; }
-        .card-form { background: #fff; width: 100%; margin-left: 110px; margin-top: 60px; max-width: 900px; border-radius: 20px; padding: 35px; box-shadow: 0 12px 30px rgba(0,0,0,0.12); animation: fade .3s ease-out; }
+        .card-form { background: #fff; width: 100%;margin-bottom: 100px; margin-left: 110px; margin-top: 60px; max-width: 900px; border-radius: 20px; padding: 35px; box-shadow: 0 12px 30px rgba(0,0,0,0.12); animation: fade .3s ease-out; }
         @keyframes fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .title { font-weight: 800; color: #000; border-left: 6px solid #f90030; padding-left: 15px; margin-bottom: 25px; }
         .form-label { font-weight: 600; }
