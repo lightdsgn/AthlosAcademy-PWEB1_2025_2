@@ -59,7 +59,7 @@ O **Athlos Academy** é um site institucional + e-commerce integrado com um sist
 
 ---
 
-## 📸 Sugestão de Capturas de Tela
+## 📸 Algumas páginas com Capturas de Tela
 
 ### TELA 1
 ![Tela 1](img/TELA1.png)
