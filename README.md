@@ -1,6 +1,6 @@
-# Athlos Academy – Sistema Web de Gestão & E-commerce
+# Athlos Academy – Sistema Web de Gestão & E-commerce 
 
-O **Athlos Academy** é um sistema web desenvolvido para auxiliar academias, treinadores e alunos na organização, gerenciamento e acompanhamento de atividades esportivas. O projeto foi criado no contexto da disciplina **Programação Web I (PWEB1)** e foi desenvolvido com foco em clareza, usabilidade e boas práticas.
+O **Athlos Academy** é um site institucional + e-commerce integrado com um sistema web desenvolvido para auxiliar academias, treinadores e alunos na organização, gerenciamento e acompanhamento de atividades esportivas, além de loja, blog e outras funcionalidades. O projeto foi criado no contexto da disciplina **Programação Web I (PWEB1)** do professor/orientador **Jackson Meires** portanto é um projeto de estudo e foi desenvolvido com foco em clareza, usabilidade e boas práticas. 
 
 ---
 
@@ -21,10 +21,9 @@ O **Athlos Academy** é um sistema web desenvolvido para auxiliar academias, tre
 
 - **HTML5**  
 - **CSS3**  
-- **JavaScript (ES6+)**  
-- **PHP 7/8**  
-- **MySQL**  
-- **Laragon / XAMPP**  
+- **JavaScript**  
+- **PHP**   
+- **Laragon**  
 - **Git & GitHub**
 
 ---
@@ -66,32 +65,7 @@ Adicione imagens dentro da pasta
 
 ---
 
-## ✅ Boas Práticas e Recomendações
-
-- Adicione um arquivo `.env` ou `config.php` para credenciais (não versionar dados sensíveis).  
-- Use `.gitignore` para excluir `node_modules`, `vendor/`, arquivos temporários e credenciais.  
-- Estruture o código por módulos (auth, usuarios, produtos, treinos, posts).  
-- Comente queries SQL e regras de negócio importantes.  
-- Faça backups regulares do banco (dump SQL).
-
----
-
-## 🤝 Como Contribuir
-
-1. Faça um **fork** do repositório.  
-2. Crie uma branch: `git checkout -b minha-feature`  
-3. Faça commits claros: `git commit -m "feat: descrição da alteração"`  
-4. Envie para o seu fork e abra um Pull Request.  
-
----
-
-## 📄 Licença
-
-Uso acadêmico / permissões conforme necessidade. Recomenda-se adicionar **LICENSE (MIT)** se desejar distribuição permissiva.
-
----
-
-## 👨‍💻 Autores
+## 👨‍💻 Dados e Autores
 
 **Lucas Eduardo Dacroce** e **Erik Martins Gollo**
 Professor/Orientador: Jackson Meires Canuto
