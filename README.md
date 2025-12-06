@@ -1,4 +1,4 @@
-# Athlos Academy – Sistema Web de Gestão Esportiva
+# Athlos Academy – Sistema Web de Gestão & E-commerce
 
 O **Athlos Academy** é um sistema web desenvolvido para auxiliar academias, treinadores e alunos na organização, gerenciamento e acompanhamento de atividades esportivas. O projeto foi criado no contexto da disciplina **Programação Web I (PWEB1)** e foi desenvolvido com foco em clareza, usabilidade e boas práticas.
 
@@ -95,5 +95,9 @@ Uso acadêmico / permissões conforme necessidade. Recomenda-se adicionar **LICE
 
 ## 👨‍💻 Autor
 
-**Lucas Eduardo Dacroce (lightdsgn)**  
+**Lucas Eduardo Dacroce (lightdsgn)**
+Professor/Orientador: Jackson Meires Canuto
+Instituto Federal de Santa Catarina
+CC: Programação Web I - 2025.2
+Módulo: VII - Curso Técnico em Informática integrado ao Ensino Médio
 GitHub: https://github.com/lightdsgn
