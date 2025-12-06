@@ -30,17 +30,18 @@ O **Athlos Academy** é um site institucional + e-commerce integrado com um sist
 
 ## 📁 Estrutura do Projeto (exemplo)
 
+```
 /
-├── css/ # Arquivos de estilo
-├── img/ # Imagens e ícones
-├── paginas/ # Páginas internas do sistema
-├── php/ # Scripts PHP (admin, CRUD, conexões)
-│ └── admin/
-├── sql/ # Arquivos de exportação do banco (dump .sql)
-├── index.html # Página inicial (front-end estático)
-├── README.md # Esta documentação
-└── style.css # Estilo principal
-
+│── css/               # Arquivos de estilo
+│── img/               # Imagens e ícones (prints, logos, assets do sistema)
+│── paginas/           # Páginas internas do sistema
+│── php/               # Scripts PHP (CRUD, conexões, autenticação)
+│── admin/             # Área administrativa
+│── sql/               # Arquivos exportados do banco (dump .sql)
+│── index.html         # Página inicial do front-end
+│── README.md          # Documentação do repositório
+│── style.css          # Estilo principal
+```
 
 ---
 
