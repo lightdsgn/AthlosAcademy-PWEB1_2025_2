@@ -1,0 +1,191 @@
+<?php
+session_start();
+require './db.class.php';
+
+$db = new db();
+
+if (!empty($_POST)) {
+    $login = trim($_POST['login'] ?? '');
+    $senha = $_POST['senha'] ?? '';
+
+    if (empty($login) || empty($senha)) {
+        $erro = "Preencha login e senha.";
+    } else {
+        $res = $db->login([
+            'login' => $login,
+            'senha' => $senha
+        ]);
+
+        if ($res === 'error') {
+            $erro = "Login ou senha inválidos.";
+        } else {
+            if ($_SESSION['tipo'] === 'instrutor') {
+                header("Location: index.php");
+                exit;
+            }
+            if ($_SESSION['tipo'] === 'cliente') {
+                header("Location: ../../index.html");
+                exit;
+            }
+        }
+    }
+}
+?>
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Login - Sistema Athlos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Sora', sans-serif;
+            background: #f90030;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+        }
+
+        header {
+            width: 100%;
+            background: #000;
+            padding: 12px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+        }
+
+        .header-logo {
+            height: 55px;
+            filter: drop-shadow(0px 4px 8px rgba(255,255,255,0.15));
+        }
+
+        .btn-header-voltar {
+            background: #f90030;
+            padding: 10px 25px;
+            color: #fff;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid #f90030;
+            transition: 0.2s ease;
+        }
+        .btn-header-voltar:hover {
+            background: #fff;
+            color: #f90030;
+            border-color: #fff;
+        }
+
+
+        .login-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 40px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: 0px 8px 30px rgba(0,0,0,0.20);
+            margin-top: 130px;
+        }
+
+        .login-card h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 800;
+            color: #000;
+        }
+
+        .form-control {
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid #f90030;
+        }
+
+        .form-control:focus {
+            border: 2px solid #f90030;
+            box-shadow: 0 0 0 0.2rem rgba(249,0,48,0.25);
+        }
+
+        .btn-login {
+            background-color: #f90030;
+            border: 2px solid #f90030;
+            border-radius: 10px;
+            padding: 12px 40px;
+            font-weight: 800;
+            color: #fff;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .btn-login:hover {
+            background-color: #ff004d;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: #000;
+            border-radius: 10px;
+            border: 2px solid #000;
+            width: 100%;
+            padding: 12px;
+            font-weight: 700;
+            margin-top: 12px;
+            color: white;
+            transition: 0.3s ease;
+        }
+        .btn-secondary:hover {
+            transform: scale(1.05);
+            border-color: #f90030;
+            color: #f90030;
+            background: #000;
+        }
+
+        .alert {
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <header>
+        <img src="../../img/LOGO-ATHLOS2.png" class="header-logo" alt="Athlos Logo">
+
+        <a href="../index.html" class="btn-header-voltar">← Voltar</a>
+    </header>
+
+
+   
+    <div class="login-card">
+        <h2>Faça login no sistema</h2>
+
+        <?php if (!empty($erro)): ?>
+            <div class="alert alert-danger"><?= htmlspecialchars($erro) ?></div>
+        <?php endif; ?>
+
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Login</label>
+                <input class="form-control" type="text" name="login" value="<?= htmlspecialchars($_POST['login'] ?? '') ?>" placeholder="Digite seu login">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Senha</label>
+                <input class="form-control" type="password" name="senha" placeholder="Digite sua senha">
+            </div>
+
+            <button class="btn btn-login" type="submit">Entrar</button>
+            <a class="btn btn-secondary" href="usuario/UsuarioForm.php">Criar conta</a>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog - Athlos Academy</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    :root {
+      --accent: #f90030;
+      --bg: #000;
+      --card-bg: #fff;
+      --card-text: #000;
+    }
+    html,body { height:100%; }
+    body {
+      margin:0;
+      background: var(--bg);
+      color: #fff;
+      font-family: 'Sora', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.post-card-body {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+    .treino-hero {
+      margin-top: 50px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,1)),
+                  url("https://opengym.com.br/blog/wp-content/uploads/2023/03/Homem-pensando-na-academia-de-ginastica-800x445.png") top/cover no-repeat;
+      color: white;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+    .treino-hero-text h1 {
+      font-size: 90px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #f90030;
+      font-family: Untyped;
+    }
+
+    .treino-hero-text h1 { font-size:56px; margin:0; color:var(--accent); font-weight:800; letter-spacing:1px; }
+    .treino-hero-text p { margin:12px 0 0; color:#fff; font-size:18px; opacity:0.95; }
+
+    .container-main { width:90%; max-width:1200px; margin:30px auto 80px; }
+
+    .filter-bar { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:22px; }
+    .filter-bar button {
+      background:#222;
+      color:#fff;
+      border:0;
+      padding:8px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      transition:all .18s;
+      font-weight:600;
+    }
+    .filter-bar button.active { background:var(--accent); transform:translateY(-3px); box-shadow:0 8px 18px rgba(249,0,48,0.18); }
+
+    .posts-grid { display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; }
+    .post-col { width:100%; }
+    @media(min-width: 576px){ .post-col{ width:calc(50% - 10px); } }
+    @media(min-width: 768px){ .post-col{ width:calc(33.333% - 13.33px); } }
+    @media(min-width: 992px){ .post-col{ width:calc(25% - 15px); } }
+
+    .post-card {
+      background: var(--card-bg);
+      color: var(--card-text);
+      border-radius:12px;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 360px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transition: transform .22s, box-shadow .22s;
+    }
+    .post-card:hover { transform: translateY(-8px); box-shadow: 0 18px 45px rgba(0,0,0,0.45); }
+    .post-card .post-img { height:200px; width:100%; overflow:hidden; }
+    .post-card .post-img img { width:100%; height:100%; object-fit:cover; display:block; }
+    .post-card-body { padding:18px 16px; display:flex; flex-direction:column; gap:12px; flex:1 1 auto; }
+    .post-card-body h5 { margin:0; color:var(--accent); font-size:1.05rem; font-weight:700; }
+    .post-card-body p { margin:0; color:#222; font-size:0.95rem; line-height:1.45; flex:1 1 auto; }
+    .post-actions { display:flex; gap:12px; align-items:center; margin-top:10px; }
+
+    .social-share i { color:var(--accent); cursor:pointer; font-size:18px; transition:transform .18s; }
+    .social-share i:hover { transform:scale(1.15); color:#ff004d; }
+
+    .comments { margin-top:36px; background:#0b0b0b; padding:20px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.6); }
+    .comments h4 { color:var(--accent); margin-bottom:12px; }
+    .comment-box input, .comment-box textarea { width:100%; padding:10px; border-radius:8px; border:0; margin-bottom:10px; background:#111; color:#fff; }
+    .comment-box input:focus{ border-color: #f90030;
+      box-shadow: 0 0 10px rgba(249,0,48,0.5);}
+    .comment-box button { background:var(--accent); border:0; color:#fff; padding:10px 18px; border-radius:8px; cursor:pointer; }
+
+    footer { text-align:center; color:#999; margin:60px 0 40px; }
+  </style>
+</head>
+<body>
+<header>
+  <img class="logo-athlos2" src="../img/LOGO-ATHLOS2.png" alt="logo athlos">
+  <a href="../index.html">Ínicio</a>
+  <a href="sobre.html">Sobre Nós</a>
+  <a href="loja.html">Loja</a>
+  <a href="treinos.html">Treinos</a>
+  <a href="blog.html" class="active">Blog</a>
+  <a href="avaliacao.html">Avaliação</a>
+  <button class="botao-contato" onclick="window.location.href='contatos.html'">Contatos</button>
+</header>
+
+  <section class="treino-hero">
+    <div class="treino-hero-text">
+      <h1 style="font-size: 90px; margin-bottom: -20px;">NOSSO BLOG</h1>
+      <p>Aqui você encontra dicas para melhorar fisicamente e mentalmente</p>
+    </div>
+  </section>
+
+  <main class="container-main">
+
+    <div class="filter-bar" role="toolbar" aria-label="Filtros">
+      <button class="active" onclick="filterPosts(event,'all')">Todos</button>
+      <button onclick="filterPosts(event,'treinos')">Treinos</button>
+      <button onclick="filterPosts(event,'nutricao')">Nutrição</button>
+      <button onclick="filterPosts(event,'atletas')">Atletas</button>
+      <button onclick="filterPosts(event,'conquistas')">Conquistas</button>
+    </div>
+
+    <div class="posts-grid" id="postsContainer">
+      <div class="post-col" data-category="treinos">
+        <article class="post-card">
+          <div class="post-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD8gfyZ9p9QBUoakP5_jhJikf_jqDNcc65OQ&s" alt="Treino 1"></div>
+          <div class="post-card-body">
+            <h5>Treino Hardcore para Força</h5>
+            <p>Aprenda a maximizar seus ganhos em força com treinos Old Skull, direto do nosso top team.</p>
+            <div class="post-actions">
+              <div class="social-share">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <a class="btn btn-sm btn-outline-dark ms-auto" href="#">Ler mais</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="post-col" data-category="nutricao">
+        <article class="post-card">
+          <div class="post-img"><img src="https://www.hipertrofia.org/blog/wp-content/uploads/2019/07/suplementos-bulking.jpg" alt="Suplementos"></div>
+          <div class="post-card-body">
+            <h5>Suplementação para Hipertrofia</h5>
+            <p>Conheça os melhores suplementos e horários para otimizar o crescimento muscular e recuperação.</p>
+            <div class="post-actions">
+              <div class="social-share">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <a class="btn btn-sm btn-outline-dark ms-auto" href="#">Ler mais</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="post-col" data-category="atletas">
+        <article class="post-card">
+          <div class="post-img"><img src="https://i.ytimg.com/vi/ynNe9Hfp6Vk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBvr0cTOnVO6Gv1GLiuiYtz_j0xkQ" alt="Atletas"></div>
+          <div class="post-card-body">
+            <h5>Histórias de Atletas</h5>
+            <p>Descubra a trajetória de nossos guerreiros e como a dedicação os levou ao topo do fisiculturismo.</p>
+            <div class="post-actions">
+              <div class="social-share">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <a class="btn btn-sm btn-outline-dark ms-auto" href="#">Ler mais</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="post-col" data-category="conquistas">
+        <article class="post-card">
+          <div class="post-img"><img src="https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/02/ramon-dino-mr.olympia-2023-e1729457560655.jpeg" alt="Conquistas"></div>
+          <div class="post-card-body">
+            <h5>Campeonatos Recentes</h5>
+            <p>Confira os resultados dos campeonatos nacionais e como nossos alunos se destacaram.</p>
+            <div class="post-actions">
+              <div class="social-share">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <a class="btn btn-sm btn-outline-dark ms-auto" href="#">Ler mais</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="post-col" data-category="treinos">
+        <article class="post-card">
+          <div class="post-img"><img src="https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg" alt="Treino 2"></div>
+          <div class="post-card-body">
+            <h5>Progresso e Periodização</h5>
+            <p>Como montar ciclos de treino que realmente geram progresso a longo prazo.</p>
+            <div class="post-actions">
+              <div class="social-share">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+              </div>
+              <a class="btn btn-sm btn-outline-dark ms-auto" href="#">Ler mais</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="post-col" data-category="nutricao">
+        <article class="post-card">
+          <div class="post-img"><img src="https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg" alt="Nutrição"></div>
+          <div class="post-card-body">
+            <h5>Refeições Pré e Pós-Treino</h5>
+            <p>O que comer antes e depois da sessão para maximizar recuperação e hipertrofia.</p>
+            <div class="post-actions">
+              <div class="social-share">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <a class="btn btn-sm btn-outline-dark ms-auto" href="#">Ler mais</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="post-col" data-category="atletas">
+        <article class="post-card">
+          <div class="post-img"><img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg" alt="Atleta 2"></div>
+          <div class="post-card-body">
+            <h5>Rotina dos Campeões</h5>
+            <p>Uma olhada na rotina diária dos nossos atletas de elite — treino, alimentação e recuperação.</p>
+            <div class="post-actions">
+              <div class="social-share">
+                <i class="fab fa-facebook"></i>
+              </div>
+              <a class="btn btn-sm btn-outline-dark ms-auto" href="#">Ler mais</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="post-col" data-category="conquistas">
+        <article class="post-card">
+          <div class="post-img"><img src="https://i.ytimg.com/vi/_putPHMfDyk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDfcgWiS1LTzhaE1Ai7IwFWYT--RQ" alt="Evento"></div>
+          <div class="post-card-body">
+            <h5>Eventos e Competições</h5>
+            <p>Resumo das competições que participamos e como foi nossa preparação para os eventos.</p>
+            <div class="post-actions">
+              <div class="social-share">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <a class="btn btn-sm btn-outline-dark ms-auto" href="#">Ler mais</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <section class="comments" aria-labelledby="commentsTitle">
+      <h4 id="commentsTitle">Deixe seu comentário</h4>
+      <div class="comment-box">
+        <input type="text" placeholder="Seu nome" aria-label="Seu nome">
+        <textarea placeholder="Sua mensagem" rows="4" aria-label="Sua mensagem"></textarea>
+        <button type="button">Enviar</button>
+      </div>
+    </section>
+
+  </main>
+
+      <footer style="padding: 30px;">
+      <small>&copy; 2025 Athlos Suplementos • Todos os direitos reservados</small>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function filterPosts(e, category) {
+      const btns = document.querySelectorAll('.filter-bar button');
+      btns.forEach(b => b.classList.remove('active'));
+      if (e && e.currentTarget) e.currentTarget.classList.add('active');
+      const posts = document.querySelectorAll('.posts-grid .post-col');
+      posts.forEach(p => {
+        const cat = p.getAttribute('data-category') || '';
+        if (category === 'all' || cat === category) {
+          p.style.display = '';
+        } else {
+          p.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

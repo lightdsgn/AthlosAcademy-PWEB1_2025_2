@@ -1,0 +1,236 @@
+/* Logo */
+.logo-athlos2 {
+    width: 200px;
+    margin: 20px;
+    transition: transform 0.3s ease-in-out; /* animação mais suave */
+}
+.logo-athlos2:hover {
+    transform: scale(1.05); /* leve aumento mais perceptível */
+}
+
+/* Body */
+body {
+    font-family: 'Sora', sans-serif;
+    scroll-behavior:smooth;
+}.card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card img {
+  transition: transform 0.3s ease;
+}
+.card:hover img {
+  transform: scale(1.05);
+}
+.card button:hover {
+  background-color: #f90030;
+  color: #fff;
+}
+header {
+  position: fixed;        
+  top: 0;                 
+  left: 0;               
+  width: 100%;           
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  gap: 1px;
+  padding: 0 120px;               
+  height: 100px;
+  background-color: #000000;
+  box-sizing: border-box;
+  z-index: 1000; 
+  border-bottom: 2px solid #f90030;   
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+/* Botão de contato */
+.botao-contato {
+    background-color: #f90030;
+    border-radius: 10px;
+    border: 2px solid #f90030;
+    padding: 10px 40px;
+    font-family: 'Sora ExtraBold', sans-serif;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.botao-contato:hover {
+    background-color: #f90030;
+    transform: scale(1.05);
+}
+
+.botao-login {
+    background-color: #000;
+    border: 2px solid #f90030;
+    border-radius: 10px;
+    
+    padding: 10px 40px;
+    font-family: 'Sora ExtraBold', sans-serif;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.botao-login:hover {
+    background-color: #ff004d;
+    transform: scale(1.05);
+}
+
+
+/* Links do header */
+header a,
+header nav a,
+header .nav-link {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 4px;       
+    position: relative;
+    transition: color 0.3s ease;
+    font-family: 'Sora', sans-serif;
+}
+
+/* Linha vermelha animada do centro para as pontas */
+header a::after,
+header nav a::after,
+header .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;              /* começa do centro */
+    bottom: 3px; 
+    width: 0%;
+    height: 2px;
+    background: #f90030;
+    transition: all 0.3s ease;
+    transform: translateX(-50%); /* centraliza a linha */
+}
+
+header a:hover::after,
+header nav a:hover::after,
+header .nav-link:hover::after {
+    width: 100%;
+}
+
+header a:hover,
+header nav a:hover,
+header .nav-link:hover {
+    color: #f90030 !important;
+}
+
+header a.active {
+  color: #f90030 !important;
+}
+
+
+
+
+.cta-btn {
+  position: absolute;
+  top: 62%;   
+  left: 5.5%;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #000000;
+  border: 2PX SOLID #f90030;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: #f90030;
+  transform: scale(1.05);
+}
+.fita-divisao {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 20px;
+  height: 70px; /* altura da faixa */
+  background-color: #000000; /* cor da fita */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+.fita-conteudo {
+  display: flex;
+  width: max-content;
+  animation: deslizar 15s linear infinite;
+}
+
+.fita-conteudo span {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+  font-family: Untyped;
+
+
+  text-transform: uppercase;
+}
+
+@keyframes deslizar {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
+.produtos{
+    padding-top: 50px;
+}
+.direcionar{
+    color: #000;
+    font-family: Sora ExtraBold;
+}
+.direcionar:hover{
+    color: #f90030;
+}
+ aside {
+      background: #f90030;
+      color: #fff;
+      padding-bottom: 40px;
+      padding: 20px;
+      border-radius: 10px;
+      position: sticky;
+      top: 100px;
+      height: 400px;
+      
+    }
+
+    aside h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    aside ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    aside ul li {
+      margin-bottom: 10px;
+    }
+
+    aside ul li i {
+      margin-right: 8px;
+      color: #fff;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: #f90030;
+      color: #fff;
+    }
+
+    .accordion-button:focus {
+      box-shadow: 0 0 0 0.1rem rgba(249, 0, 48, 0.5);
+    }
+
+    .accordion-body {
+      border-left: 3px solid #f90030;
+      padding-left: 15px;
+ 
+    }

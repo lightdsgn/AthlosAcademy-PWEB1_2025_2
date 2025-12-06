@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Avaliações - Athlos Academy</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <style>
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.card {
+  background: linear-gradient(145deg, #111, #222);
+  border-radius: 15px;
+  border: 1px solid #333;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  color: #fff;
+  font-family: Sora;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.9);
+}
+
+.card h3 {
+  border-bottom: 1px solid #555;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+    color: #fff;
+}
+
+.form-control, .form-select, textarea {
+  color: #fff;       /* texto normal */
+  background-color: #1b1b1b;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.form-control:focus, .form-select:focus, textarea:focus {
+  background-color: #222;
+  border-color: #f90030;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 0, 64, 0.5);
+}
+.form-control::placeholder,
+.form-select::placeholder,
+textarea::placeholder {
+  color: #ccc;      
+  opacity: 1;        
+}
+
+textarea {
+  color: #fff;
+  resize: none;
+}
+
+.btn-primary {
+  background-color: #f90030;
+  border: none;
+  padding: 12px 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: 0.3s;
+  font-family: Sora;
+}
+
+.btn-primary:hover {
+  background-color: #f90030;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 0, 64, 0.5);
+}
+
+.progress {
+  height: 20px;
+  background-color: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, rgb(255, 52, 96), #f90030);
+  transition: width 0.5s, background 0.5s;
+}
+
+input.form-control,
+select.form-select,
+textarea.form-control {
+  color: #fff !important;       
+  background-color: #1b1b1b !important; 
+  border: 1px solid #444 !important;
+}
+
+
+input.form-control::placeholder,
+select.form-select::placeholder,
+textarea.form-control::placeholder {
+  color: #ccc !important;      
+  opacity: 1;
+}
+
+
+input.form-control:focus,
+select.form-select:focus,
+textarea.form-control:focus {
+  color: #fff !important;
+  background-color: #222 !important;
+  border-color: #f90030 !important;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 0, 64, 0.5);
+}
+
+
+.historico h3 {
+  margin-bottom: 20px;
+}
+
+.table-dark th, .table-dark td {
+  border-color: #444;
+  vertical-align: middle;
+}
+
+.table-dark tbody tr:hover {
+  background-color: #111;
+}
+.treino-hero {
+      margin-top: 50px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,1)),
+                  url("https://i0.wp.com/blog.mfitpersonal.com.br/wp-content/uploads/2023/10/blog-capa-6-motivos-para-voce-personal-trainer-ter-um-parceiro-nutricionista.png?fit=800%2C308&ssl=1") top/cover no-repeat;
+      color: white;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+    .treino-hero-text h1 {
+      font-size: 90px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #f90030;
+      font-family: Untyped;
+    }
+
+  </style>
+</head>
+
+<body style="color: #fff; background-color: rgb(0, 0, 0); font-family: Arial, sans-serif;">
+
+  <header>
+    <img class="logo-athlos2" src="../img/LOGO-ATHLOS2.png" alt="logo athlos">
+    <a href="../index.html">Ínicio</a>
+    <a href="sobre.html">Sobre Nós</a>
+  <a href="loja.php">Loja</a>
+  <a href="treinos.php">Treinos</a>
+  <a href="blog.php">Blog</a>
+    <a href="avaliacao.html"class="active">Avaliação</a>
+<button class="botao-contato" onclick="window.location.href='contatos.html'">
+  Contatos
+</button>
+
+
+  </header>
+     <section class="treino-hero">
+    <div class="treino-hero-text">
+      <h1>CONSULTA FISICA</h1>
+      <p style="font-family: Sora; margin-top: -20px;">Faça sua avaliação física de forma online e prática</p>
+    </div>
+  </section>
+<main class="container my-5">
+
+
+
+  <div class="card p-4 mb-4">
+    <h3><i class="fas fa-user"></i> Dados Pessoais</h3>
+    <div class="row g-3 mt-3">
+      <div class="col-md-6"><input type="text" class="form-control" placeholder="Nome Completo"></div>
+      <div class="col-md-2"><input type="number" class="form-control" placeholder="Idade"></div>
+      <div class="col-md-2">
+        <select class="form-select">
+          <option selected>Sexo</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
+      </div>
+      <div class="col-md-2"><input type="text" class="form-control" placeholder="Tipo Sanguíneo"></div>
+      <div class="col-md-6"><input type="email" class="form-control" placeholder="Email"></div>
+      <div class="col-md-6"><input type="text" class="form-control" placeholder="Telefone"></div>
+    </div>
+  </div>
+
+
+  <div class="card p-4 mb-4">
+    <h3><i class="fas fa-ruler"></i> Medidas Corporais</h3>
+    <div class="row g-3 mt-3">
+      <div class="col-md-3"><input type="number" step="0.01" class="form-control" placeholder="Altura (m)"></div>
+      <div class="col-md-3"><input type="number" step="0.1" class="form-control" placeholder="Peso (kg)"></div>
+      <div class="col-md-2"><input type="number" step="0.1" class="form-control" placeholder="Braço (cm)"></div>
+      <div class="col-md-2"><input type="number" step="0.1" class="form-control" placeholder="Peito (cm)"></div>
+      <div class="col-md-2"><input type="number" step="0.1" class="form-control" placeholder="Cintura (cm)"></div>
+      <div class="col-md-2"><input type="number" step="0.1" class="form-control" placeholder="Quadril (cm)"></div>
+      <div class="col-md-2"><input type="number" step="0.1" class="form-control" placeholder="Ombros (cm)"></div>
+      <div class="col-md-2"><input type="number" step="0.1" class="form-control" placeholder="Perna (cm)"></div>
+      <div class="col-md-2"><input type="number" step="0.1" class="form-control" placeholder="Panturrilha (cm)"></div>
+      <div class="col-md-2"><input type="number" step="0.1" class="form-control" placeholder="Pescoço (cm)"></div>
+    </div>
+  </div>
+
+
+  <div class="card p-4 mb-4">
+    <h3><i class="fas fa-heartbeat"></i> Composição Corporal</h3>
+    <div class="row g-3 mt-3">
+      <div class="col-md-3"><input type="number" step="0.1" class="form-control" placeholder="IMC" readonly></div>
+      <div class="col-md-3"><input type="number" step="0.1" class="form-control" placeholder="% Gordura"></div>
+      <div class="col-md-3"><input type="number" step="0.1" class="form-control" placeholder="Massa Magra (kg)"></div>
+      <div class="col-md-3"><input type="number" step="0.1" class="form-control" placeholder="Massa Gorda (kg)"></div>
+    </div>
+
+
+    <div class="mt-3">
+      <label>IMC:</label>
+      <div class="progress">
+        <div class="progress-bar" style="width: 50%;"></div>
+      </div>
+    </div>
+    <div class="mt-2">
+      <label>% Gordura:</label>
+      <div class="progress">
+        <div class="progress-bar" style="width: 30%;"></div>
+      </div>
+    </div>
+    <div class="mt-2">
+      <label>Massa Magra:</label>
+      <div class="progress">
+        <div class="progress-bar" style="width: 60%;"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card p-4 mb-4">
+    <h3><i class="fas fa-dumbbell"></i> Condição Física</h3>
+    <div class="row g-3 mt-3">
+      <div class="col-md-3"><input type="number" class="form-control" placeholder="Força (kg)"></div>
+      <div class="col-md-3"><input type="number" class="form-control" placeholder="Resistência (min)"></div>
+      <div class="col-md-3"><input type="number" step="0.1" class="form-control" placeholder="Flexibilidade (cm)"></div>
+      <div class="col-md-3"><input type="text" class="form-control" placeholder="Velocidade (s/100m)"></div>
+      <div class="col-md-3"><input type="text" class="form-control" placeholder="Pressão Arterial"></div>
+      <div class="col-md-3"><input type="number" class="form-control" placeholder="Frequência Cardíaca (bpm)"></div>
+    </div>
+  </div>
+
+
+  <div class="card p-4 mb-4">
+    <h3><i class="fas fa-bullseye"></i> Objetivos do Aluno</h3>
+    <textarea class="form-control" rows="3" placeholder="Curto prazo:"></textarea>
+    <textarea class="form-control mt-2" rows="3" placeholder="Médio prazo:"></textarea>
+    <textarea class="form-control mt-2" rows="3" placeholder="Longo prazo:"></textarea>
+  </div>
+
+ 
+  <div class="card p-4 mb-4">
+    <h3><i class="fas fa-sticky-note"></i> Observações e Recomendações</h3>
+    <textarea class="form-control" rows="4" placeholder="Ex: Lesões, limitações, recomendações do treinador"></textarea>
+  </div>
+
+  <div class="text-center mb-5">
+    <button type="submit" class="btn btn-primary btn-lg">Salvar Avaliação</button>
+  </div>
+
+ 
+  <div class="historico card p-4 mb-5">
+    <h3><i class="fas fa-history"></i> Histórico de Avaliações</h3>
+    <table class="table table-dark table-striped mt-3">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Peso</th>
+          <th>IMC</th>
+          <th>% Gordura</th>
+          <th>Observações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01/09/2025</td>
+          <td>70 kg</td>
+          <td>22,9</td>
+          <td>18%</td>
+          <td>Sem lesões</td>
+        </tr>
+        <tr>
+          <td>01/06/2025</td>
+          <td>72 kg</td>
+          <td>23,5</td>
+          <td>19%</td>
+          <td>Leve cansaço muscular</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+</body>
+
+ 
+
+</html>

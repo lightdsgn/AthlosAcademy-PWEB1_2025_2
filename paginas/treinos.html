@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treinos - Athlos Academy</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <style>
+    body {
+      background-color: #fff;
+      font-family: 'Sora', sans-serif;
+      overflow-x: hidden;
+    }
+
+
+    .treino-hero {
+      margin-top: 50px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,1)),
+                  url("https://www.feitodeiridium.com.br/wp-content/uploads/2016/10/triceps-barras-paralelas.jpg") center/cover no-repeat;
+      color: white;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+    .treino-hero-text h1 {
+      font-size: 90px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #f90030;
+      font-family: Untyped;
+    }
+    .treino-hero-text p {
+      font-size: 1.2rem;
+      margin-top: -15px;
+      color: #ffffff;
+    }
+
+   .treino-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.4s ease;
+  position: relative;
+}
+.treino-card:hover {
+  transform: translateY(-5px) scale(1.002);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.treino-info {
+  padding: 20px;
+  color: #fff;
+ 
+  position: relative;
+  top: -60px;
+}
+.treino-info h3 {
+  color:#f90030;
+  font-weight:700;
+  font-size:1.7rem;
+}
+.treino-info ul li {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:6px 0;
+  border-bottom:1px solid rgba(255, 255, 255, 0.2);
+}
+.tag-foco {
+  display:inline-block;
+  background:#f90030;
+  color:#fff;
+  padding:4px 12px;
+  border-radius:15px;
+  font-weight:700;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.beneficios i {
+  transition: transform 0.3s;
+  margin-bottom: 20px;
+
+}
+.beneficios i:hover {
+  transform: scale(1.1);
+}
+    .treino-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .treino-info {
+      padding: 20px;
+      color: #fff;
+    }
+    .treino-info h3 {
+      color: #f90030;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .treino-info ul {
+      list-style: none;
+      padding: 0;
+    }
+    .treino-info li {
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+
+    .cta-section {
+      background: linear-gradient(to right, #f90030, #ff004c);
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .cta-section h2 {
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .cta-section .btn {
+      background: #fff;
+      color: #f90030;
+      font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+    .cta-section .btn:hover {
+      background: #20131D;
+      color: #fff;
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .beneficios {
+  background: #f90030;
+  border-radius: 20px;
+  padding: 60px 20px;
+}
+
+.beneficio-card {
+  background: #fff;
+  color: #f90030;
+  border-radius: 20px;
+  padding: 30px 20px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  height: 250px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.beneficio-card h5 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.beneficio-card p {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Animação fadeUp simples */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.beneficio-card {
+  animation: fadeUp 0.8s forwards;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <img class="logo-athlos2" src="../img/LOGO-ATHLOS2.png" alt="logo athlos">
+    <a href="../index.html">Ínicio</a>
+    <a href="sobre.html">Sobre Nós</a>
+    <a href="loja.php">Loja</a>
+    <a href="treinos.php" class="active">Treinos</a>
+    <a href="blog.php">Blog</a>
+    <a href="avaliacao.html">Avaliação</a>
+<button class="botao-contato" onclick="window.location.href='contatos.html'">
+  Contatos
+</button>
+
+  </header>
+
+
+  <section class="treino-hero">
+    <div class="treino-hero-text">
+      <h1>Treinos Personalizados</h1>
+      <p>Planos exclusivos para cada grupo muscular e seu objetivo</p>
+    </div>
+  </section>
+
+
+  <main class="container my-5">
+   
+    <div class="row g-4 mt-4">
+<section class="beneficios py-5">
+  <div class="container text-center">
+    <h2 class="titulo-treinos mb-4" style="color:#fff;">Por que treinar na Athlos?</h2>
+    <div class="row g-4">
+
+      <div class="col-md-3">
+        <div class="beneficio-card">
+          <i class="fas fa-dumbbell fa-3x mb-2"></i>
+          <h5>Equipamentos</h5>
+          <p>Treine com aparelhos de última geração.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="beneficio-card">
+          <i class="fas fa-user-check fa-3x mb-2"></i>
+          <h5>Personal Trainers</h5>
+          <p>Profissionais qualificados para acompanhar você.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="beneficio-card">
+          <i class="fas fa-heartbeat fa-3x mb-2"></i>
+          <h5>Saúde e Bem-estar</h5>
+          <p>Planos pensados para saúde e condicionamento físico.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="beneficio-card">
+          <i class="fas fa-clock fa-3x mb-2"></i>
+          <h5>Horários Flexíveis</h5>
+          <p>Treine a qualquer hora, conforme sua rotina.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <h2 style="font-family: Sora ExtraBold; margin-top: 100px; color: #f90030; background-color: #000000; border-radius: 10px; padding: 20px;" class="text-center titulo-treinos mb-1 ">TABELA DE TREINOS SEMANAIS</h2>
+  <div class="row g-4">
+    
+
+
+    <div class="col-md-6">
+      <div class="treino-card">
+        <div class="treino-card-img" style="background:url('https://i.ytimg.com/vi/aTyxohoaOj8/maxresdefault.jpg') center/cover no-repeat; height:300px; filter:brightness(0.7);"></div>
+        <div class="treino-info">
+          <span class="tag-foco">Força</span>
+          <h3 style="margin-top: 20px;">Treino A - Peito e Tríceps</h3>
+          <ul>
+            <li><i class="fas fa-dumbbell"></i> Supino reto - 4x10</li>
+            <li><i class="fas fa-dumbbell"></i> Supino inclinado - 3x12</li>
+            <li><i class="fas fa-dumbbell"></i> Crucifixo - 3x12</li>
+            <li><i class="fas fa-hand-rock"></i> Tríceps pulley - 3x12</li>
+            <li><i class="fas fa-hand-rock"></i> Tríceps testa - 3x12</li>
+            <li><i class="fas fa-hand-rock"></i> Flexão - 3x até a falha</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="treino-card">
+        <div class="treino-card-img" style="background:url('https://i.ytimg.com/vi/XZWE2fWSN1c/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBVPPlIffm1I0SrngAw4IVF-5xWCQ') center/cover no-repeat; height:300px; filter:brightness(0.7);"></div>
+        <div class="treino-info">
+          <span class="tag-foco">Força</span>
+          <h3 style="margin-top: 20px;">Treino B - Costas e Bíceps</h3>
+          <ul>
+            <li><i class="fas fa-dumbbell"></i> Puxada frente - 4x10</li>
+            <li><i class="fas fa-dumbbell"></i> Remada baixa - 4x12</li>
+            <li><i class="fas fa-dumbbell"></i> Cerrote - 4x12</li>
+            <li><i class="fas fa-hand-rock"></i> Barra fixa - 3x até a falha</li>
+            <li><i class="fas fa-hand-rock"></i> Rosca direta - 3x12</li>
+            <li><i class="fas fa-hand-rock"></i> Rosca alternada - 3x12</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="treino-card">
+        <div class="treino-card-img" style="background:url('https://i.ytimg.com/vi/ho4tOSujptQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD7T87mBYKDiahwlsA2KxlDJsTGmQ') center/cover no-repeat; height:220px; filter:brightness(0.7);height:300px;"></div>
+        <div class="treino-info">
+          <span class="tag-foco">Hipertrofia</span>
+          <h3 style="margin-top: 20px;">Treino C - Pernas e Ombros</h3>
+          <ul>
+            <li><i class="fas fa-dumbbell"></i> Agachamento livre - 4x10</li>
+            <li><i class="fas fa-dumbbell"></i> Leg press - 4x12</li>
+
+            <li><i class="fas fa-dumbbell"></i> Extensora - 4x12</li>
+            <li><i class="fas fa-dumbbell"></i> Elevação lateral - 3x12</li>
+            <li><i class="fas fa-dumbbell"></i> Desenvolvimento - 3x12</li>
+            <li><i class="fas fa-dumbbell"></i> Stiff - 3x12</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="treino-card">
+        <div class="treino-card-img" style="background:url('https://i.ytimg.com/vi/hKbygu_qmAg/maxresdefault.jpg') center/cover no-repeat; height:220px; filter:brightness(0.7); height: 300px;"></div>
+        <div class="treino-info">
+          <span class="tag-foco">Cardio</span>
+          <h3 style="margin-top: 20px;">Treino D - Abdômen e Cardio</h3>
+          <ul>
+            <li><i class="fas fa-running"></i> Prancha - 4x30s</li>
+            <li><i class="fas fa-running"></i> Abdominal infra - 4x15</li>
+            <li><i class="fas fa-running"></i> Abdominal oblíquo - 3x20</li>
+            <li><i class="fas fa-bolt"></i> Corrida HIIT - 20 min</li>
+            <li><i class="fas fa-bicycle"></i> Bicicleta ergométrica - 15 min</li>
+            <li><i class="fas fa-hand-rock"></i> Flexão - 3x até a falha</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+</main>
+
+<section class="cta-section">
+    <div class="text-center">
+      <i class="fas fa-bolt fa-3x mb-3" style="color:#fff; animation: bounce 1.5s infinite;"></i>
+      <h2>Quer elevar seus resultados?</h2>
+      <p>Agende uma avaliação gratuita com nossos personal trainers e monte um plano exclusivo.</p>
+      <a href="avaliacao.html" class="btn btn-cta">Agendar Avaliação</a>
+    </div>
+  </section>
+  
+
+</body>
+</html>

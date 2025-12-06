@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loja - Athlos Suplementos</title>
+
+  <!-- Bootstrap + FontAwesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    header {
+  position: fixed;        
+  top: 0;                 
+  left: 0;               
+  width: 100%;           
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  gap: 1px;
+  padding: 0 120px;               
+  height: 100px;
+  background-color: #000000;
+  box-sizing: border-box;
+  z-index: 1000; 
+  border-bottom: 2px solid #f90030;   
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.botao-contato {
+    background-color: #f90030;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 40px;
+    font-family: 'Sora ExtraBold', sans-serif;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.botao-contato:hover {
+    background-color: #ff004d;
+    transform: scale(1.05);
+}
+
+
+header a,
+header nav a,
+header .nav-link {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 4px;       
+    position: relative;
+    transition: color 0.3s ease;
+    font-family: 'Sora', sans-serif;
+}
+
+
+header a::after,
+header nav a::after,
+header .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;         
+    bottom: 3px; 
+    width: 0%;
+    height: 2px;
+    background: #f90030;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+header a:hover::after,
+header nav a:hover::after,
+header .nav-link:hover::after {
+    width: 100%;
+}
+
+
+header a:hover,
+header nav a:hover,
+header .nav-link:hover {
+    color: #f90030 !important;
+}
+
+header a.active {
+  color: #f90030 !important;
+}
+
+
+    :root{
+      --brand:#f90030;
+      --brand-dark:#20131D;
+      --accent:#ff004d;
+      --card-radius:14px;
+    }
+
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Sora', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+
+    header.site-header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:0 28px;
+      background:#000;
+      z-index:1100;
+      box-shadow:0 6px 18px rgba(0,0,0,0.35);
+    }
+
+
+    .cart-badge{
+      position:absolute; top:-6px; right:-8px; background:var(--brand); color:#fff; font-size:11px;
+      padding:3px 7px; border-radius:999px; font-weight:700;
+    }
+
+    main.wrapper{ padding-top:110px; }
+
+
+    .loja-hero{
+      background:linear-gradient(90deg, rgba(249,0,48,0.95), rgba(255,0,76,0.9));
+      color:#000;
+      padding:48px 20px;
+      border-radius:12px;
+      margin:16px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      box-shadow:0 12px 30px rgba(249,0,48,0.12);
+    }
+    .loja-hero h1{ font-size:34px; margin:0; color:#000; font-weight:900; letter-spacing:1px; }
+    .loja-hero p{ margin:0; color:rgba(0,0,0,0.7); }
+
+
+    .filters-wrap{ margin:20px 28px; }
+
+    .product-card{
+      background:var(--brand-dark);
+      color:#fff;
+      border-radius:var(--card-radius);
+      padding:12px;
+      overflow:hidden;
+      position:relative;
+      transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s;
+      will-change:transform;
+    }
+    .product-card:hover{ transform:translateY(-5px) scale(1.01); box-shadow:0 18px 40px rgba(32,19,29,.45); }
+    .product-badge{
+      position:absolute; left:12px; top:12px; background:rgba(0,0,0,0.5);
+      color:#fff; padding:6px 10px; border-radius:10px; font-size:12px; font-weight:700;
+      text-transform:uppercase;
+      backdrop-filter: blur(6px);
+    }
+    .product-img{
+      width:100%; height:200px; object-fit:cover; border-radius:10px; display:block; 
+    }
+ 
+    .product-title{ font-weight:800; margin-top:12px; font-size:1rem; color:#fff; }
+    .product-price{ color:var(--brand); font-weight:900; margin-top:6px; font-size:1.05rem; }
+
+    .product-actions{ display:flex; gap:8px; margin-top:14px; }
+    .btn-comprar{
+      flex:1;
+      background:linear-gradient(90deg,var(--brand),var(--accent));
+      border:none; padding:10px 12px; color:#fff; border-radius:10px; font-weight:800;
+      transition:transform .15s, box-shadow .2s;
+      cursor:pointer;
+    }
+    .btn-comprar:active{ transform:scale(.98); }
+    .btn-quick{
+      background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.08); padding:8px 10px; border-radius:10px;
+      display:flex; align-items:center; gap:8px; cursor:pointer;
+    }
+
+
+    .reveal { opacity:0; transform:translateY(24px); transition:all .6s cubic-bezier(.2,.9,.2,1); }
+    .reveal.visible { opacity:1; transform:none; }
+
+
+    .offcanvas-cart .offcanvas-body{ background:var(--brand-dark); color:#fff; }
+    .cart-item{ display:flex; gap:12px; align-items:center; border-bottom:1px solid rgba(255,255,255,0.04); padding:12px 0; }
+    .cart-item img{ width:64px; height:64px; object-fit:cover; border-radius:8px; }
+    .cart-item .title{ font-weight:700; font-size:0.95rem; }
+    .cart-item .price{ color:var(--brand); font-weight:800; }
+    .qty-control{ display:flex; gap:6px; align-items:center; }
+
+
+    .toast-container-fixed{ position:fixed; top:88px; right:18px; z-index:1200; }
+
+
+    footer{ padding:28px; text-align:center; color:#666; font-size:0.95rem; margin-top:28px; }
+
+
+    @media (max-width:900px){
+      .loja-hero{ flex-direction:column; text-align:center; gap:10px; }
+      header.site-header{ padding:0 14px; }
+      main.wrapper{ padding-top:100px; }
+    }
+  </style>
+</head>
+<body>
+
+
+<header>
+<img class="logo-athlos2" src="../img/LOGO-ATHLOS2.png" alt="logo athlos" style="width: 150px;">
+
+
+    <a href="../index.html">Início</a>
+    <a href="../paginas/sobre.html">Sobre Nós</a>
+    <a href="../paginas/loja.html" class="active">Loja</a>
+    <a href="../paginas/treinos.html">Treinos</a>
+    <a href="../paginas/blog.html">Blog</a>
+    <a href="../paginas/avaliacao.html">Avaliação</a>
+
+  <div style="display:flex;align-items:center;gap:14px">
+<button class="botao-contato" onclick="window.location.href='contatos.html'">
+  Contatos
+</button>
+
+
+
+    <button class="btn-cart position-relative" id="openCart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" style="background:none;border:none;color:#fff;font-size:22px">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-badge" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+
+  
+<main class="wrapper">
+
+ 
+  <section class="loja-hero container-fluid" style="width: 90%; margin: 0 auto; text-align: center;">
+  <div>
+    <h1 style="font-size: 3.4rem;font-family: Untyped; font-weight: 900; margin-bottom: -5px; margin-left: 90px; color: #fff;">
+      SEU SUPLEMENTO PARA A GUERRA AQUI!
+    </h1>
+    <p style="font-size: 1.8rem; font-weight: 600; margin-bottom: 20px;margin-left: 90px; color: #000;">
+      "Aqui o ferro é religião, a dor é caminho e a glória é destino."
+    </p>
+
+    <div style="margin-top: 20px; max-width: 800px; margin-left: 120px;">
+     
+      <small style="display:block; color:rgb(255, 255, 255); font-weight:600; font-size:1.1rem; white-space:normal; word-wrap:break-word; margin-left: 90px; background-color: #000; border-radius: 10px; padding: 20px;"><i style="color: rgb(0, 214, 0); margin-right: 10px;" class="fa-solid fa-truck-fast"></i>
+        <span style="color: rgb(0, 214, 0); ">Frete grátis acima de R$399</span> • Entrega rápida
+      </small>
+    </div>
+  </div>
+</section>
+
+
+
+    <section class="filters-wrap container" style="margin-left: 80px;">
+      <div class="row g-2 align-items-center">
+        <div class="col-md-6 col-lg-7">
+          <input id="searchBar" class="form-control" placeholder="Pesquisar produto, ex: 'Whey'...">
+        </div>
+        <div class="col-md-3 col-lg-2">
+          <select id="categoryFilter" class="form-select">
+            <option value="all">Todas</option>
+            <option value="creatina">Creatinas</option>
+            <option value="whey">Wheys</option>
+            <option value="pretreino">Pré-Treinos</option>
+            <option value="strap">Straps</option>
+            <option value="adulterados">Adulterados</option>
+          </select>
+        </div>
+        <div class="col-md-3 col-lg-3 text-end">
+          <small style="color:#666">Ordenar por:</small>
+          <select id="sortBy" class="form-select d-inline-block" style="width:auto">
+            <option value="default">Relevância</option>
+            <option value="price-asc">Preço ↑</option>
+            <option value="price-desc">Preço ↓</option>
+            <option value="name-asc">A-Z</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="produtos" class="container my-4">
+      <div class="row g-3" id="productsGrid">
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="creatina" data-name="Creatina DarkLabs 300g" data-price="129.90">
+          <div class="product-card">
+            <div class="product-badge">Creatina</div>
+            <img class="product-img" src="https://images.tcdn.com.br/img/img_prod/572302/creatina_pura_dark_lab_300g_729_6_0c783ead90f7a908040ea8e4fbf5e33c.jpeg" alt="Creatina DarkLabs">
+            <div class="product-title">Creatina DarkLabs 300g</div>
+            <div class="product-price">R$ 55,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="creatina" data-name="Creatina Monohidratada" data-price="149.90">
+          <div class="product-card">
+            <div class="product-badge">Creatina</div>
+            <img class="product-img" src="https://cdn.awsli.com.br/2500x2500/2690/2690062/produto/248210329/creatina-creapure-growth-zrbnenosln.png" alt="Creatina Monohidratada">
+            <div class="product-title">Creatina Monohidratada</div>
+            <div class="product-price">R$ 75,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="creatina" data-name="Creatina Ultra" data-price="179.90">
+          <div class="product-card">
+            <div class="product-badge">Creatina</div>
+            <img class="product-img" src="https://images.tcdn.com.br/img/img_prod/801282/creatina_max_titanium_monohidratada_em_po_300g_1148_1_5735d9bf0656e6a829202a49a23a8deb.jpg" alt="Creatina Ultra">
+            <div class="product-title">Creatina Max</div>
+            <div class="product-price">R$ 50,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="whey" data-name="Whey DarkLabs 1kg" data-price="169.90">
+          <div class="product-card">
+            <div class="product-badge">Whey</div>
+            <img class="product-img" src="https://product-data.raiadrogasil.io/images/11258616.webp" alt="Whey DarkLabs">
+            <div class="product-title">Whey DarkLab 900g </div>
+            <div class="product-price">R$ 169,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="whey" data-name="Whey Athlos 900g" data-price="149.90">
+          <div class="product-card">
+            <div class="product-badge">Whey</div>
+            <img class="product-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfXC3SWT5uaVWNcZ7BDY8jXSQfr7x1wl22iA&s" alt="Whey 1Kg">
+            <div class="product-title">Whey Growth 1Kg</div>
+            <div class="product-price">R$ 149,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="whey" data-name="Whey Isolado" data-price="189.90">
+          <div class="product-card">
+            <div class="product-badge">Whey</div>
+            <img class="product-img" src="https://static.allianzparqueshop.com.br/produtos/protein-fusion-whey-isolate-18kg-espartanos-nutrition/63/GAI-0022-963/GAI-0022-963_zoom1.jpg?ts=1714660514" alt="Whey Isolado">
+            <div class="product-title">Whey Espartanos</div>
+            <div class="product-price">R$ 55,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="whey" data-name="Whey Blend 1kg" data-price="159.90">
+          <div class="product-card">
+            <div class="product-badge">Whey</div>
+            <img class="product-img" src="https://images.tcdn.com.br/img/img_prod/677409/whey_blend_protein_900g_673_2_b07bbd8d80b393ad6452fe4f80c7bbf5.png" alt="Whey Blend">
+            <div class="product-title">Whey Blend 900g</div>
+            <div class="product-price">R$ 159,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="pretreino" data-name="Hellfire" data-price="199.90">
+          <div class="product-card">
+            <div class="product-badge">Pré Treino</div>
+            <img class="product-img" src="https://images.tcdn.com.br/img/img_prod/1285457/pre_treino_haze_hardcore_300g_53_1_b0ea1a78ac36d91d3da8b2d2371f6b39.jpg" alt="Hellfire">
+            <div class="product-title">Haze</div>
+            <div class="product-price">R$ 199,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="pretreino" data-name="Venom" data-price="179.90">
+          <div class="product-card">
+            <div class="product-badge">Pré Treino</div>
+            <img class="product-img" src="https://m.media-amazon.com/images/I/61vsQU0PPKL._UF350,350_QL80_.jpg" alt="Venom">
+            <div class="product-title">Venom</div>
+            <div class="product-price">R$ 179,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="pretreino" data-name="Insano" data-price="219.90">
+          <div class="product-card">
+            <div class="product-badge">Pré Treino</div>
+            <img class="product-img" src="https://images.tcdn.com.br/img/img_prod/920697/insane_clown_350g_demons_lab_1905_2_5927835eb7d62b2a0d28f0b99e80112e.jpeg" alt="Insano">
+            <div class="product-title">Insane Clown</div>
+            <div class="product-price">R$ 219,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="strap" data-name="Strap DarkLabs" data-price="89.90">
+          <div class="product-card">
+            <div class="product-badge">Strap</div>
+            <img class="product-img" src="https://m.media-amazon.com/images/I/71ed6yT2u-L.jpg" alt="Strap DarkLabs">
+            <div class="product-title">Strap DarkLabs</div>
+            <div class="product-price">R$ 89,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="strap" data-name="Strap Athlos Pro" data-price="79.90">
+          <div class="product-card">
+            <div class="product-badge">Strap</div>
+            <img class="product-img" src="https://m.media-amazon.com/images/I/51-pJTw5EVL.jpg" alt="Strap Athlos Pro">
+            <div class="product-title">Strap Athlos Pro</div>
+            <div class="product-price">R$ 79,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="strap" data-name="Strap Hardcore" data-price="69.90">
+          <div class="product-card">
+            <div class="product-badge">Strap</div>
+            <img class="product-img" src="https://images.tcdn.com.br/img/img_prod/751575/strap_monster_1_20250812101333_92dc8c6a96d4.jpg" alt="Strap Hardcore">
+            <div class="product-title">Strap Hardcore</div>
+            <div class="product-price">R$ 69,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="adulterados" data-name="Testo Black" data-price="95">
+          <div class="product-card">
+            <div class="product-badge">☠ Adulterados</div>
+            <img class="product-img" src="https://www.oficialfarma.com.br/media/catalog/product/t/e/testo-black-atualizada_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=663&width=500&canvas=500:663" alt="Testo Black">
+            <div class="product-title">Testo Black</div>
+            <div class="product-price">R$ 95</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal product-item" data-category="adulterados" data-name="Skull" data-price="279.90">
+          <div class="product-card">
+            <div class="product-badge">☠ Adulterados</div>
+            <img class="product-img" src="https://cdn.awsli.com.br/300x300/924/924345/produto/152932226/59e0fca916.jpg" alt="Oxydrol">
+            <div class="product-title">Oxydrol</div>
+            <div class="product-price">R$ 76,90</div>
+            <div class="product-actions">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-quick" data-bs-toggle="modal" data-bs-target="#quickViewModal">Ver</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <small>&copy; 2025 Athlos Suplementos • Todos os direitos reservados</small>
+    </footer>
+  </main>
+
+
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <img id="quickImg" src="" alt="" style="width:100%;height:320px;object-fit:cover;border-radius:12px">
+            </div>
+            <div class="col-md-6">
+              <h4 id="quickTitle"></h4>
+              <p id="quickPrice" style="color:var(--brand);font-weight:900;font-size:1.3rem"></p>
+              <p id="quickDesc" style="color:rgba(255,255,255,0.85)">Descrição rápida do produto. Pode adicionar detalhes aqui.</p>
+              <div class="d-flex gap-2 align-items-center mt-3">
+                <button id="quickAdd" class="btn-comprar">Adicionar ao carrinho</button>
+                <button class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="offcanvas offcanvas-end offcanvas-cart" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header bg-dark text-light">
+      <h5 id="cartOffcanvasLabel"><i style="margin-right: 10px;" class="fa-solid fa-cart-shopping"></i> Seu carrinho</h5>
+      <button  type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="cartList" style="min-height:120px"></div>
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <h5>Total</h5>
+        <h5 id="cartTotal">R$ 0,00</h5>
+      </div>
+      <div class="mt-3">
+        <button id="checkoutBtn" class="btn-finalizar w-100" style="background-color: #f90030; border-radius: 10px; border: none; padding: 10px; color: #fff;">Finalizar compra</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="toast-container-fixed" id="toastContainer"></div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+    const formatBRL = v => new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(v);
+
+
+    const cartCountEl = document.getElementById('cartCount');
+    const cartListEl = document.getElementById('cartList');
+    const cartTotalEl = document.getElementById('cartTotal');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const toastContainer = document.getElementById('toastContainer');
+
+
+    let cart = JSON.parse(localStorage.getItem('athlosCart') || '[]');
+
+    function saveCart(){
+      localStorage.setItem('athlosCart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function addToCart(item){
+
+      const exists = cart.find(ci => ci.id === item.id);
+      if(exists) exists.qty++;
+      else cart.push({...item, qty:1});
+      saveCart();
+      showToast(`${item.name} adicionado ao carrinho`);
+    }
+
+    function removeFromCart(id){
+      cart = cart.filter(i => i.id !== id);
+      saveCart();
+    }
+
+    function changeQty(id, delta){
+      const it = cart.find(i=>i.id===id);
+      if(!it) return;
+      it.qty += delta;
+      if(it.qty < 1) removeFromCart(id);
+      saveCart();
+    }
+
+    function renderCart(){
+      cartCountEl.innerText = cart.reduce((s,i)=>s+i.qty,0);
+      cartListEl.innerHTML = '';
+      let total = 0;
+      if(cart.length === 0){
+        cartListEl.innerHTML = '<div class="text-center py-4 text-muted">Seu carrinho está vazio.</div>';
+      } else {
+        cart.forEach(it => {
+          total += it.price * it.qty;
+          const row = document.createElement('div');
+          row.className = 'cart-item';
+          row.innerHTML = `
+            <img src="${it.img}" alt="${it.name}">
+            <div style="flex:1">
+              <div class="title">${it.name}</div>
+              <div class="text-muted small">Quantidade: <span class="fw-bold">${it.qty}</span></div>
+            </div>
+            <div class="text-end">
+              <div class="price">${formatBRL(it.price * it.qty)}</div>
+              <div class="qty-control mt-2">
+                <button class="btn btn-sm btn-outline-light" data-action="dec" data-id="${it.id}">-</button>
+                <button class="btn btn-sm btn-outline-light" data-action="inc" data-id="${it.id}">+</button>
+                <button class="btn btn-sm btn-danger" data-action="remove" data-id="${it.id}">Remover</button>
+              </div>
+            </div>
+          `;
+          cartListEl.appendChild(row);
+        });
+      }
+      cartTotalEl.innerText = formatBRL(total);
+    }
+
+
+    cartListEl.addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if(!btn) return;
+      const action = btn.dataset.action;
+      const id = btn.dataset.id;
+      if(action === 'inc') changeQty(id, 1);
+      if(action === 'dec') changeQty(id, -1);
+      if(action === 'remove') removeFromCart(id);
+    });
+
+    checkoutBtn.addEventListener('click', () => {
+      if(cart.length === 0){ showToast('Carrinho vazio', true); return; }
+
+      showToast('Checkout iniciado (apenas demo)');
+
+    });
+
+
+    const productNodes = document.querySelectorAll('.product-item');
+    const productsGrid = document.getElementById('productsGrid');
+
+    productNodes.forEach((node, idx) => {
+      const card = node.querySelector('.product-card');
+      const imgEl = node.querySelector('.product-img');
+      const name = node.dataset.name;
+      const price = parseFloat(node.dataset.price);
+      const id = node.dataset.name.replace(/\s+/g,'_').toLowerCase() + '_' + idx;
+      node.dataset.id = id;
+
+      card.dataset.id = id;
+      card.dataset.name = name;
+      card.dataset.price = price;
+      card.dataset.img = imgEl ? imgEl.src : '';
+ 
+      card.querySelector('.btn-comprar').addEventListener('click', (e)=>{
+        const item = { id, name, price, img: imgEl.src };
+        addToCart(item);
+
+        e.target.innerText = '✓';
+        setTimeout(()=> e.target.innerText = 'Comprar', 1000);
+      });
+
+      card.querySelector('.btn-quick').addEventListener('click', ()=>{
+        document.getElementById('quickImg').src = imgEl.src;
+        document.getElementById('quickTitle').innerText = name;
+        document.getElementById('quickPrice').innerText = formatBRL(price);
+        document.getElementById('quickDesc').innerText = 'Produto top da Athlos — qualidade premium. Adicione ao carrinho com um clique.';
+        document.getElementById('quickAdd').onclick = () => {
+          addToCart({ id, name, price, img: imgEl.src });
+          const quickModal = bootstrap.Modal.getInstance(document.getElementById('quickViewModal'));
+          quickModal.hide();
+        };
+      });
+    });
+
+
+    const searchBar = document.getElementById('searchBar');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const sortBy = document.getElementById('sortBy');
+
+    function applyFilters(){
+      const query = searchBar.value.trim().toLowerCase();
+      const cat = categoryFilter.value;
+      const nodes = document.querySelectorAll('.product-item');
+      nodes.forEach(n => {
+        const name = n.dataset.name.toLowerCase();
+        const matchesQuery = name.includes(query);
+        const matchesCat = (cat === 'all') ? true : n.dataset.category === cat;
+        n.style.display = (matchesQuery && matchesCat) ? '' : 'none';
+      });
+      applySort(); 
+      revealOnScroll(); 
+    }
+
+    function applySort(){
+      const mode = sortBy.value;
+      const grid = document.getElementById('productsGrid');
+      const items = Array.from(grid.querySelectorAll('.product-item')).filter(i => i.style.display !== 'none');
+      items.sort((a,b)=>{
+        const pa = parseFloat(a.dataset.price), pb = parseFloat(b.dataset.price);
+        const na = a.dataset.name.toLowerCase(), nb = b.dataset.name.toLowerCase();
+        if(mode === 'price-asc') return pa - pb;
+        if(mode === 'price-desc') return pb - pa;
+        if(mode === 'name-asc') return na.localeCompare(nb);
+        return 0;
+      });
+
+      items.forEach(i => grid.appendChild(i));
+    }
+
+    searchBar.addEventListener('input', applyFilters);
+    categoryFilter.addEventListener('change', applyFilters);
+    sortBy.addEventListener('change', applySort);
+
+  
+    const revealElements = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold:.12 });
+    function revealOnScroll(){
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    }
+    revealOnScroll();
+
+
+    function showToast(msg, isError=false){
+      const id = 't'+Date.now();
+      const toast = document.createElement('div');
+      toast.className = 'toast align-items-center text-bg-dark border-0';
+      toast.role = 'alert';
+      toast.ariaLive = 'assertive';
+      toast.ariaAtomic = 'true';
+      toast.innerHTML = `
+        <div class="d-flex">
+          <div class="toast-body">${msg}</div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      `;
+      toastContainer.appendChild(toast);
+      const bsToast = new bootstrap.Toast(toast, { delay: 2200 });
+      bsToast.show();
+      toast.addEventListener('hidden.bs.toast', ()=> toast.remove());
+    }
+
+
+    renderCart();
+    applyFilters();
+
+
+    window.addEventListener('resize', revealOnScroll);
+  </script>
+</body>
+</html>
