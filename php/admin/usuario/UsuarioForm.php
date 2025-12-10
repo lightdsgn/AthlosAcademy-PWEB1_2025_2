@@ -48,8 +48,9 @@ if (!empty($_POST)) {
 
         if (!empty($errors)) {
             $msgErrors = implode("<br>", $errors);
-        } else {
+            $data = (object) $_POST;
 
+            } else {
           
             if (empty($_POST['id'])) {
 
@@ -263,7 +264,6 @@ if (!empty($_POST)) {
             </div>
         </div>
 
-        <!-- Tipo -->
         <div class="row g-3 mt-1">
             <div class="col-md-4">
                 <label class="form-label">Tipo de Usuário</label>
@@ -275,7 +275,7 @@ if (!empty($_POST)) {
             </div>
         </div>
 
-        <!-- Botões -->
+
         <div class="mt-4">
             <button class="btn-save" type="submit">Salvar</button>
         </div>

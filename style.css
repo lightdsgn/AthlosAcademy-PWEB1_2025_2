@@ -2,13 +2,13 @@
 .logo-athlos2 {
     width: 200px;
     margin: 20px;
-    transition: transform 0.3s ease-in-out; /* animação mais suave */
+    transition: transform 0.3s ease-in-out; 
 }
 .logo-athlos2:hover {
-    transform: scale(1.05); /* leve aumento mais perceptível */
+    transform: scale(1.05); 
 }
 
-/* Body */
+
 body {
     font-family: 'Sora', sans-serif;
     scroll-behavior:smooth;
@@ -43,7 +43,7 @@ header {
   border-bottom: 2px solid #f90030;   
 box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-/* Botão de contato */
+
 .botao-contato {
     background-color: #f90030;
     border-radius: 10px;
@@ -76,7 +76,6 @@ box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 
-/* Links do header */
 header a,
 header nav a,
 header .nav-link {
@@ -89,19 +88,19 @@ header .nav-link {
     font-family: 'Sora', sans-serif;
 }
 
-/* Linha vermelha animada do centro para as pontas */
+
 header a::after,
 header nav a::after,
 header .nav-link::after {
     content: "";
     position: absolute;
-    left: 50%;              /* começa do centro */
+    left: 50%;             
     bottom: 3px; 
     width: 0%;
     height: 2px;
     background: #f90030;
     transition: all 0.3s ease;
-    transform: translateX(-50%); /* centraliza a linha */
+    transform: translateX(-50%);
 }
 
 header a:hover::after,
@@ -110,15 +109,15 @@ header .nav-link:hover::after {
     width: 100%;
 }
 
-/* Hover da cor */
+
 header a:hover,
 header nav a:hover,
 header .nav-link:hover {
     color: #f90030 !important;
 }
-/* Link ativo no menu */
+
 header a.active {
-  color: #f90030 !important; /* deixa o texto vermelho */
+  color: #f90030 !important; 
 }
 
 
@@ -126,8 +125,8 @@ header a.active {
 
 .cta-btn {
   position: absolute;
-  top: 62%;   /* ajuste para alinhar logo abaixo do texto */
-  left: 5.5%;  /* ajuste horizontal conforme a imagem */
+  top: 62%;   
+  left: 5.5%;  
   padding: 15px 30px;
   font-size: 1.1rem;
   font-weight: bold;
@@ -148,8 +147,8 @@ header a.active {
   width: 100%;
   overflow: hidden;
   padding-top: 20px;
-  height: 70px; /* altura da faixa */
-  background-color: #000000; /* cor da fita */
+  height: 70px;
+  background-color: #000000; 
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   z-index: 10;
 }

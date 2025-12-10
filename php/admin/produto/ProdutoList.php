@@ -158,7 +158,6 @@ if ($busca) {
 
                 <td>
 
-                <!-- EDITAR -->
                 <a href="ProdutoForm.php?id=<?= $p->id ?>"
                    style="border-radius:10px; margin-bottom:5px; width:100px; font-family: Sora SemiBold"
                    class="btn btn-sm btn-primary">

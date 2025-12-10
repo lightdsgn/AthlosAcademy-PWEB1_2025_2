@@ -38,7 +38,7 @@ if (!empty($_POST)) {
     <title>Login - Sistema Athlos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
-
+  <link rel="icon" type="image/png" href="../../img/favicon.png">
     <style>
 body {
     font-family: 'Sora', sans-serif;

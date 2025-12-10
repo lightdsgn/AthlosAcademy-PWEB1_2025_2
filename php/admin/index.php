@@ -13,7 +13,7 @@ if ($_SESSION['usuario_tipo'] === 'cliente') {
     exit;
 }
 
-// Buscar quantidades reais
+
 $dbUsuarios = new db('usuario');
 $totalUsuarios = count($dbUsuarios->all());
 
@@ -45,6 +45,7 @@ $alertas = [
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../../img/favicon.png">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 body {font-family:'Sora',sans-serif; background:#f4f4f4;}
@@ -58,6 +59,57 @@ body {font-family:'Sora',sans-serif; background:#f4f4f4;}
 .kpi-card .card-body{padding:20px;}
 .alert-dashboard{border-radius:10px;}
 h3{font-weight:800; margin-bottom:30px; color:#f90030;}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn .8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUp .8s ease forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.stagger {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: staggerAnim .8s ease forwards;
+}
+
+@keyframes staggerAnim {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.zoom-in {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: zoomIn .6s ease forwards;
+}
+
+@keyframes zoomIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 </style>
 </head>
 <body>
@@ -65,12 +117,15 @@ h3{font-weight:800; margin-bottom:30px; color:#f90030;}
 
 
 <div class="container mt-5">
-    <h1 style="margin-top: 27px;width:120%;margin-left:-100px;  background-color: #000000ff; color:#f90030; font-family:Untyped; text-align:center; padding:40px 100px; font-size:55px">PAINEL ADMINISTRATIVO - <span style="color:#fff; ">ATHLOS</span></h1>
-<h3 style="margin-top:50px">Bem vindo, <?= htmlspecialchars($_SESSION['nome']) ?></h3>
+    <h1 class="fade-in" style="margin-top:27px;width:120%;margin-left:-100px; background-color:#000; color:#f90030; font-family:Untyped; text-align:center; padding:40px 100px; font-size:55px">
+    PAINEL ADMINISTRATIVO - <span style="color:#fff;">ATHLOS</span>
+</h1>
+<h3 class="slide-up" style="margin-top:50px">Bem vindo, <?= htmlspecialchars($_SESSION['nome']) ?></h3>
+
 
 <div class="row g-4 mb-5">
 
-         <div class="col-md-3" style="margin-right:-10px">
+         <div class="col-md-3 zoom-in stagger" style="animation-delay:.1s">
             <div class="card dash-card text-white shadow"style="background-color: #f90030; color:#fff; border:none">
                 <div class="card-body d-flex align-items-center justify-content-between">
                     <div>
@@ -83,32 +138,8 @@ h3{font-weight:800; margin-bottom:30px; color:#f90030;}
             </div>
         </div>
         
-         <div class="col-md-3"style="margin-right:-10px">
-            <div class="card dash-card text-white shadow"style="background-color: #f90030; color:#fff; border:none">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <div>
-                        <h5>Postagens</h5>
-                        <h2><?= $totalPosts ?></h2>
 
-                    </div>
-                    <i class="bi bi-person-badge-fill display-4"></i>
-                </div>
-            </div>
-        </div>
-       
-        <div class="col-md-3"style="margin-right:-10px">
-            <div class="card dash-card text-white shadow"style="background-color: #f90030; color:#fff; border:none">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <div>
-                        <h5>Treinos</h5>
-                        <h2><?= $totalTreinos ?></h2>
-
-                    </div>
-                    <i class="bi bi-card-checklist display-4"></i>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3"style="margin-right:-10px">
+         <div class="col-md-3 zoom-in stagger" style="animation-delay:.2s">
             <div class="card dash-card text-white shadow"style="background-color: #f90030; color:#fff; border:none">
                 <div class="card-body d-flex align-items-center justify-content-between">
                     <div>
@@ -121,10 +152,36 @@ h3{font-weight:800; margin-bottom:30px; color:#f90030;}
             </div>
         </div>
 
+        <div class="col-md-3 zoom-in stagger" style="animation-delay:.3s">
+            <div class="card dash-card text-white shadow"style="background-color: #f90030; color:#fff; border:none">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h5>Treinos</h5>
+                        <h2><?= $totalTreinos ?></h2>
+
+                    </div>
+                    <i class="bi bi-card-checklist display-4"></i>
+                </div>
+            </div>
+        </div>
+
+            <div class="col-md-3 zoom-in stagger" style="animation-delay:.4s">
+            <div class="card dash-card text-white shadow"style="background-color: #f90030; color:#fff; border:none">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h5>Postagens</h5>
+                        <h2><?= $totalPosts ?></h2>
+
+                    </div>
+                    <i class="bi bi-person-badge-fill display-4"></i>
+                </div>
+            </div>
+        </div>
 
 
-<div class="row g-4 mb-5">
-        <div class="col-md-3">
+<div class="row g-3 mb-5" style="margin-left:-1px;" >
+        <div class="col-md-3 slide-up stagger" style="animation-delay:.5s">
+
             <div class="card shadow dash-action-card">
                 <div class="card-body text-center" >
                     <i style="color:#f90030; font-size: 55px; margin-bottom:10px;margin-top:10px" class="fa-solid fa-address-card"></i>
@@ -135,7 +192,7 @@ h3{font-weight:800; margin-bottom:30px; color:#f90030;}
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 slide-up stagger" style="animation-delay:.6s">
             <div class="card shadow dash-action-card">
                 <div class="card-body text-center">
                     <i style="color:#f90030; font-size: 55px; margin-bottom:10px; margin-top:10px"  class="fa-solid fa-cart-shopping"></i>
@@ -146,7 +203,7 @@ h3{font-weight:800; margin-bottom:30px; color:#f90030;}
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 slide-up stagger" style="animation-delay:.7s">
             <div class="card shadow dash-action-card">
                 <div class="card-body text-center">
                    <i style="color:#f90030; font-size: 55px; margin-bottom:10px;margin-top:10px" class="fa-solid fa-dumbbell"></i>
@@ -158,7 +215,7 @@ h3{font-weight:800; margin-bottom:30px; color:#f90030;}
             </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 slide-up stagger" style="animation-delay:.8s">
             <div class="card shadow dash-action-card">
                 <div class="card-body text-center">
                      <i style="color:#f90030; font-size: 55px; margin-bottom:10px;margin-top:10px" class="fa-solid fa-newspaper"></i>

@@ -131,6 +131,14 @@ if (!empty($busca)) {
             padding-left: 15px;
             margin-bottom: 25px;
         }
+        .table img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+ 
+}
+
     </style>
 </head>
 <body>
