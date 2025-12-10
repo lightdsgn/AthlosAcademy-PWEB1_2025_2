@@ -59,9 +59,40 @@ O **Athlos Academy** é um site institucional + e-commerce integrado com um sist
 
 ---
 
-## 📸 Sugestão de Capturas de Tela
+## 📸 Algumas páginas com Capturas de Tela
 
-Adicione imagens dentro da pasta
+### TELA 1
+![Tela 1](img/TELA1.png)
+
+**Descrição:** O index da parte institucional.
+
+---
+
+### TELA 2
+![Tela 2](img/TELA2.png)
+
+**Descrição:** Parte da loja funcional abre somente mediante login no sistema para dados cadastrais.
+
+---
+
+### TELA 3
+![Tela 3](img/TELA3.png)
+
+**Descrição:** Dashboard do sistema, possui informações e acessos as páginas do sistema administrativo.
+
+---
+
+### TELA 4
+![Tela 4](img/TELA4.png)
+
+**Descrição:** Listagem dos produtos.
+
+---
+
+### TELA 5
+![Tela 5](img/TELA5.png)
+
+**Descrição:** Criação/Edição de um Usuário.
 
 
 ---
